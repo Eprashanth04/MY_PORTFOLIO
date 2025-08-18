@@ -1,11 +1,11 @@
 
 import { useState, useEffect } from 'react';
-import { Github, Linkedin, Mail, Download, ChevronDown } from 'lucide-react';
+import { GithubIcon, LinkedinIcon, Mail, Download, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const Hero = () => {
   const [displayText, setDisplayText] = useState('');
-  const fullText = 'MERN Stack Developer';
+  const fullText = 'Full Stack Developer | Passionate Coder';
   
   useEffect(() => {
     let index = 0;
@@ -28,66 +28,67 @@ const Hero = () => {
     }
   };
 
-  const bhanuresume =()=>{
-    window.open('https://drive.google.com/file/d/15dGetylW7h4qvH7zHNILnB_kbMvsoyI7/view?usp=sharing');
+  const Prashanthresume =()=>{
+    window.open('https://drive.google.com/file/d/1HGZ7NhfP749okkqGLvrLugI3b9pZ7mT9/view?usp=sharing');
   }
 
   return (
     <div className="min-h-screen flex items-center justify-center relative overflow-hidden">
-      {/* Animated Background */}
       <div className="absolute inset-0">
-        <div className="absolute top-20 left-20 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
-        <div className="absolute top-40 right-20 w-72 h-72 bg-yellow-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
-        <div className="absolute bottom-20 left-40 w-72 h-72 bg-pink-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"></div>
+        <div className="absolute top-20 left-20 w-72 h-72 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
+        <div className="absolute top-40 right-20 w-72 h-72 bg-cyan-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
+        <div className="absolute bottom-20 left-40 w-72 h-72 bg-indigo-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"></div>
       </div>
 
       <div className="container mx-auto px-6 text-center relative z-10">
         <div className="animate-fade-in">
-          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
-            Hi, I'm <span className="text-purple-400">Mahankali</span>
+          <h1 className="text-5xl md:text-7xl font-bold text-slate-900 dark:text-white mb-6">
+            Hi, I'm
           </h1>
-          <h2 className="text-6xl md:text-8xl font-bold text-white mb-4">
-            <span className="text-purple-400">Bhanu Babu</span>
+          <h2 className="text-6xl md:text-8xl font-bold text-slate-900 dark:text-white mb-4">
+            <span className="text-blue-600 dark:text-blue-400">E Sai Prashanth</span>
           </h2>
-          <div className="text-2xl md:text-3xl text-gray-300 mb-8 h-12">
-            <span className="border-r-2 border-purple-400 pr-2 animate-pulse">
+          <div className="text-2xl md:text-3xl text-slate-600 dark:text-slate-300 mb-8 h-12">
+            <span className="border-r-2 border-blue-600 dark:border-blue-400 pr-2 animate-pulse">
               {displayText}
             </span>
           </div>
-          <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
-            Fresh graduate with passion for building scalable web applications with modern technologies. 
-            Eager to create innovative solutions and contribute to development teams.
+          <p className="text-xl text-slate-600 dark:text-slate-400 mb-4 max-w-2xl mx-auto">
+            2026 Graduate | Motivated Software Engineering Enthusiast
+          </p>
+          <p className="text-lg text-slate-700 dark:text-slate-400 mb-8 max-w-3xl mx-auto">
+            Aspiring Full Stack Developer and 2026 Graduate. Passionate about building impactful projects using Java, MERN Stack, and AI/ML. Seeking to apply technical and problem-solving skills in real-world environments.
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
             <Button 
               size="lg" 
-              className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 rounded-full transition-all duration-300 transform hover:scale-105"
-              onClick={bhanuresume}
+              className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full transition-all duration-300 transform hover:scale-105"
+              onClick={Prashanthresume}
             >
               <Download className="mr-2" size={20} />
-              Download Resume
+              View Resume
             </Button>
             <div className="flex space-x-4">
               <a 
-                href="https://github.com/mahankalibhanubabu?tab=repositories" 
+                href="https://github.com/EPrashanth04" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-white hover:text-purple-400 transition-colors duration-200 transform hover:scale-110"
+                className="text-slate-900 hover:text-blue-600 dark:text-white dark:hover:text-blue-400 transition-colors duration-200 transform hover:scale-110"
               >
-                <Github size={24} />
+                <GithubIcon size={24} />
               </a>
               <a 
-                href="www.linkedin.com/in/mahankali-bhanubabu-86294228a" 
+                href="https://www.linkedin.com/in/esaiprashanth" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-white hover:text-purple-400 transition-colors duration-200 transform hover:scale-110"
+                className="text-slate-900 hover:text-blue-600 dark:text-white dark:hover:text-blue-400 transition-colors duration-200 transform hover:scale-110"
               >
-                <Linkedin size={24} />
+                <LinkedinIcon size={24} />
               </a>
               <a 
-                href="mailto:mahankalibbhanubabu23323@gmail.com"
-                className="text-white hover:text-purple-400 transition-colors duration-200 transform hover:scale-110"
+                href="mailto:ellurprashanth82@gmail.com"
+                className="text-slate-900 hover:text-blue-600 dark:text-white dark:hover:text-blue-400 transition-colors duration-200 transform hover:scale-110"
               >
                 <Mail size={24} />
               </a>

@@ -50,6 +50,11 @@
     --sidebar-border: 220 13% 91%;
 
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Scrollbar (light theme) */
+    --scrollbar-track: 210 40% 96.1%; /* slate-100 */
+    --scrollbar-thumb: 217.2 91.2% 59.8%; /* blue-500 */
+    --scrollbar-thumb-hover: 221.2 83.2% 53%; /* blue-600 */
   }
 
   .dark {
@@ -88,20 +93,28 @@
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Scrollbar (dark theme) */
+    --scrollbar-track: 217.2 32.6% 17.5%; /* slate-700 */
+    --scrollbar-thumb: 224.3 76.3% 48%; /* blue-600 */
+    --scrollbar-thumb-hover: 226.5 71.8% 40.2%; /* blue-700 */
   }
 }
 
 @layer base {
   * {
-    @apply border-border;
+    border-color: hsl(var(--border));
+    /* Firefox scrollbar */
+    scrollbar-color: hsl(var(--scrollbar-thumb)) hsl(var(--scrollbar-track));
+    scrollbar-width: thin;
   }
 
   body {
-    @apply bg-background text-foreground;
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
   }
 }
 
-/* Custom animations */
 @keyframes blob {
   0% {
     transform: translate(0px, 0px) scale(1);
@@ -155,25 +168,35 @@
   animation: fadeIn 1s ease-out;
 }
 
-/* Smooth scrolling */
 html {
   scroll-behavior: smooth;
 }
 
-/* Custom scrollbar */
+/* Subtle card hover for light/dark */
+.card-hover {
+  transition: box-shadow 200ms ease, transform 200ms ease;
+}
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(2, 6, 23, 0.08);
+}
+.dark .card-hover:hover {
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.35);
+}
+
 ::-webkit-scrollbar {
   width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #1e293b;
+  background: hsl(var(--scrollbar-track));
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #a855f7;
+  background: hsl(var(--scrollbar-thumb));
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #9333ea;
+  background: hsl(var(--scrollbar-thumb-hover));
 }
