@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prashanth-portfolio</title>
+    <link rel="icon" href="data:," />
+    <script>
+      (function() {
+        try {
+          var key = 'theme';
+          var stored = localStorage.getItem(key);
+          var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+          var isDark = stored ? stored === 'dark' : prefersDark;
+          if (isDark) document.documentElement.classList.add('dark');
+          else document.documentElement.classList.remove('dark');
+        } catch(e) {}
+      })();
+    </script>
+    <meta name="description" content="E Sai Prashanth - Full Stack Developer, Java Developer, and Web Development Intern at Tech Octanet. Experienced in modern web technologies and software development." />
+    <meta name="author" content="E Sai Prashanth" />
+
+    <meta property="og:title" content="E Sai Prashanth - Full Stack Developer" />
+    <meta property="og:description" content="E Sai Prashanth - Full Stack Developer, Java Developer, and Web Development Intern at Tech Octanet. Experienced in modern web technologies and software development." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/resume.png" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="/resume.png" />
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
