@@ -38,7 +38,6 @@ const Certificates = () => {
     }
   ];
 
-  const allcertificate = "https://drive.google.com/drive/folders/1ZOHU2dzjLIVxHw8pd3njxmbQa3xnTAsX?usp=drive_link";
 
   return (
     <div className="container mx-auto px-6">
@@ -99,7 +98,7 @@ const Certificates = () => {
                   className="border-blue-600/40 text-blue-700 hover:bg-blue-600/10 dark:border-blue-400/40 dark:text-blue-300 dark:hover:bg-blue-600/20 w-full"
                 >
                   <a 
-                    href={allcertificate} 
+                    href=" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="inline-flex items-center justify-center"
