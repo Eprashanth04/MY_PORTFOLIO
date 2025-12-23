@@ -57,7 +57,7 @@ const Certificates = () => {
           className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full transition-all duration-300 transform hover:scale-105"
         >
           <a 
-            href={allcertificate} 
+            href= 
             target="_blank" 
             rel="noopener noreferrer"
             className="inline-flex items-center"
@@ -98,13 +98,13 @@ const Certificates = () => {
                   className="border-blue-600/40 text-blue-700 hover:bg-blue-600/10 dark:border-blue-400/40 dark:text-blue-300 dark:hover:bg-blue-600/20 w-full"
                 >
                   <a 
-                    href=" 
+                    href=
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="inline-flex items-center justify-center"
                   >
                     <Download className="mr-2" size={16} />
-                    View Certificate
+                    
                   </a>
                 </Button>
               </div>
