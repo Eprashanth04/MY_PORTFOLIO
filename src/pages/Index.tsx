@@ -42,36 +42,36 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100 dark:from-slate-900 dark:via-blue-900 dark:to-slate-900 transition-colors">
       <Navigation activeSection={activeSection} onNavigate={setActiveSection} />
-      
+
       <section id="home">
         <Hero />
       </section>
 
-      <section id="about" className="py-20 border-t border-slate-200 dark:border-slate-800">
+      <section id="about" className="py-20">
         <About />
       </section>
 
-      <section id="skills" className="py-20 bg-slate-100/60 dark:bg-slate-800/50 transition-colors border-t border-slate-200 dark:border-slate-800">
+      <section id="skills" className="py-20 bg-slate-100/60 dark:bg-slate-800/50 transition-colors">
         <Skills />
       </section>
 
-      <section id="experience" className="py-20 border-t border-slate-200 dark:border-slate-800">
+      <section id="experience" className="py-20">
         <Experience />
       </section>
 
-      <section id="projects" className="py-20 bg-slate-100/60 dark:bg-slate-800/50 transition-colors border-t border-slate-200 dark:border-slate-800">
+      <section id="projects" className="py-20 bg-slate-100/60 dark:bg-slate-800/50 transition-colors">
         <Projects />
       </section>
 
-      <section id="education" className="py-20 border-t border-slate-200 dark:border-slate-800">
+      <section id="education" className="py-20">
         <Education />
       </section>
 
-      <section id="certificates" className="py-20 bg-slate-100/60 dark:bg-slate-800/50 transition-colors border-t border-slate-200 dark:border-slate-800">
+      <section id="certificates" className="py-20 bg-slate-100/60 dark:bg-slate-800/50 transition-colors">
         <Certificates />
       </section>
 
-      <section id="contact" className="py-20 border-t border-slate-200 dark:border-slate-800">
+      <section id="contact" className="py-20">
         <Contact />
       </section>
 

@@ -77,7 +77,7 @@ const Education = () => {
 
       <div className="grid lg:grid-cols-2 gap-8">
         <div className="space-y-6">
-          <h3 className="text-2xl font-bold text-white mb-6">Educational Background</h3>
+          <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-6">Educational Background</h3>
           {education.map((edu, index) => (
             <Card key={index} className="bg-white/70 dark:bg-slate-800/50 border-blue-600/20 dark:border-blue-400/20 hover:border-blue-600/40 dark:hover:border-blue-400/40 transition-all duration-300 card-hover">
               <CardHeader>
@@ -108,7 +108,7 @@ const Education = () => {
                       <span>{edu.location}</span>
                     </div>
                   </div>
-                  
+
                   <div className="bg-slate-100 dark:bg-slate-700/50 p-4 rounded-lg">
                     <h4 className="text-blue-600 dark:text-blue-400 font-semibold mb-2">
                       {edu.cgpa ? 'CGPA' : 'Percentage'}
@@ -124,17 +124,17 @@ const Education = () => {
         </div>
 
         <div className="space-y-6">
-          <h3 className="text-2xl font-bold text-white mb-6">Certifications & Achievements</h3>
+          <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-6">Certifications & Achievements</h3>
           {achievements.map((achievement, index) => (
-            <Card key={index} className="bg-slate-800/50 border-blue-400/20 hover:border-blue-400/40 transition-all duration-300 transform hover:scale-105">
+            <Card key={index} className="bg-white/70 dark:bg-slate-800/50 border-blue-600/20 dark:border-blue-400/20 hover:border-blue-600/40 dark:hover:border-blue-400/40 transition-all duration-300 transform hover:scale-105">
               <CardContent className="p-6">
                 <div className="flex items-start gap-4">
-                  <div className="text-blue-400 mt-1">
+                  <div className="text-blue-600 dark:text-blue-400 mt-1">
                     {achievement.icon}
                   </div>
                   <div>
-                    <h4 className="text-white font-semibold text-lg mb-2">{achievement.title}</h4>
-                    <p className="text-slate-300 leading-relaxed">{achievement.description}</p>
+                    <h4 className="text-slate-900 dark:text-white font-semibold text-lg mb-2">{achievement.title}</h4>
+                    <p className="text-slate-700 dark:text-slate-300 leading-relaxed">{achievement.description}</p>
                   </div>
                 </div>
               </CardContent>

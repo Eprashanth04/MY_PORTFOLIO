@@ -6,6 +6,19 @@ import { Calendar, MapPin, Building } from 'lucide-react';
 const Experience = () => {
   const experiences = [
     {
+      title: 'AI Intern',
+      company: 'Infosys Springboard',
+      location: 'Remote',
+      duration: 'Jan 2026 – Feb 2026',
+      type: 'Internship',
+      description: [
+        'Developed an AI System to Automatically Review and Summarize Research Papers',
+        'Utilized machine learning models to analyze and extract key information from academic texts',
+        'Streamlined the research process by providing automated, accurate summaries'
+      ],
+      technologies: ['Python', 'Machine Learning', 'NLP', 'Research Analysis']
+    },
+    {
       title: 'Web Development Intern',
       company: 'Tech Octanet',
       location: 'Remote',
@@ -37,11 +50,10 @@ const Experience = () => {
 
         <div className="space-y-12">
           {experiences.map((exp, index) => (
-            <div 
-              key={index} 
-              className={`relative flex items-center ${
-                index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
-              }`}
+            <div
+              key={index}
+              className={`relative flex items-center ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
+                }`}
             >
               <div className="absolute left-4 md:left-1/2 transform -translate-x-1/2 w-4 h-4 bg-blue-400 rounded-full border-4 border-slate-100 dark:border-slate-900 z-10"></div>
 

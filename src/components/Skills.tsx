@@ -10,51 +10,28 @@ const Skills = () => {
   const skillCategories = [
     {
       title: 'Programming Languages',
-      icon: <Code className="w-6 h-6" />,
-      skills: [
-        { name: 'Java', level: 85 },
-        { name: 'Python', level: 80 },
-        { name: 'C', level: 75 },
-      ]
+      icon: <Code className="w-8 h-8" />,
+      skills: ['Java', 'Python', 'C']
     },
     {
       title: 'Web Technologies',
-      icon: <Globe className="w-6 h-6" />,
-      skills: [
-        { name: 'HTML/CSS', level: 90 },
-        { name: 'JavaScript', level: 85 },
-        { name: 'React.js', level: 80 },
-        { name: 'Node.js', level: 75 },
-        { name: 'Express.js', level: 75 },
-        { name: 'MongoDB', level: 80 },
-        { name: 'SQL', level: 85 },
-      ]
+      icon: <Globe className="w-8 h-8" />,
+      skills: ['HTML/CSS', 'JavaScript', 'React.js', 'Node.js', 'Express.js', 'MongoDB', 'SQL']
     },
     {
       title: 'Libraries & Tools',
-      icon: <Server className="w-6 h-6" />,
-      skills: [
-        { name: 'NumPy', level: 80 },
-        { name: 'Pandas', level: 80 },
-        { name: 'Scikit-learn', level: 75 },
-        { name: 'Matplotlib', level: 75 },
-      ]
+      icon: <Server className="w-8 h-8" />,
+      skills: ['NumPy', 'Pandas', 'Scikit-learn', 'Matplotlib']
     },
     {
       title: 'Development Tools',
-      icon: <Cloud className="w-6 h-6" />,
-      skills: [
-        { name: 'Git/GitHub', level: 90 },
-        { name: 'VS Code', level: 95 },
-        { name: 'Jupyter Notebook', level: 85 },
-        { name: 'Postman', level: 80 },
-        { name: 'Netlify', level: 75 },
-      ]
+      icon: <Cloud className="w-8 h-8" />,
+      skills: ['Git/GitHub', 'VS Code', 'Jupyter Notebook', 'Postman', 'Netlify']
     }
   ];
 
   const technologies = [
-    'Java', 'Python', 'C', 'HTML', 'CSS', 'JavaScript', 'React.js', 'Node.js', 
+    'Java', 'Python', 'C', 'HTML', 'CSS', 'JavaScript', 'React.js', 'Node.js',
     'Express.js', 'MongoDB', 'SQL', 'NumPy', 'Pandas', 'Scikit-learn', 'Matplotlib',
     'Git', 'GitHub', 'VS Code', 'Jupyter Notebook', 'Postman', 'Netlify'
   ];
@@ -63,7 +40,7 @@ const Skills = () => {
     'DSA', 'OOPs', 'Web Development', 'DBMS', 'Computer Networks', 'AWS (Basic)',
     'Machine Learning', 'IoT', 'OS'
   ];
-  
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -92,36 +69,40 @@ const Skills = () => {
         </p>
       </div>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
         {skillCategories.map((category, index) => (
-          <Card 
-            key={category.title} 
-            className="bg-white/70 dark:bg-slate-800/50 border-blue-600/20 dark:border-blue-400/20 hover:border-blue-600/40 dark:hover:border-blue-400/40 transition-all duration-300 transform hover:scale-105 card-hover"
+          <Card
+            key={category.title}
+            className="group relative overflow-hidden bg-white/50 dark:bg-slate-800/40 backdrop-blur-sm border-slate-200 dark:border-slate-700 hover:border-blue-500/50 dark:hover:border-blue-400/50 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 h-full"
+            style={{
+              opacity: isVisible ? 1 : 0,
+              transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
+              transitionDelay: `${index * 100}ms`,
+              transitionDuration: '700ms'
+            }}
           >
-            <CardHeader className="text-center">
-              <div className="flex justify-center text-blue-600 dark:text-blue-400 mb-2">
+            {/* Gradient Background Effect on Hover */}
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-cyan-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+            <CardHeader className="text-center pb-2 relative z-10">
+              <div className="w-16 h-16 mx-auto mb-4 bg-blue-50 dark:bg-blue-900/20 rounded-2xl flex items-center justify-center text-blue-600 dark:text-blue-400 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500">
                 {category.icon}
               </div>
-              <CardTitle className="text-slate-900 dark:text-white">{category.title}</CardTitle>
+              <CardTitle className="text-xl text-slate-900 dark:text-white mb-2">{category.title}</CardTitle>
+              <div className="w-12 h-1 bg-blue-600/20 dark:bg-blue-400/20 mx-auto rounded-full group-hover:w-24 group-hover:bg-blue-600 dark:group-hover:bg-blue-400 transition-all duration-500"></div>
             </CardHeader>
-            <CardContent>
-              <div className="space-y-4">
+            <CardContent className="relative z-10 pt-4">
+              <div className="flex flex-wrap gap-2 justify-center">
                 {category.skills.map((skill, skillIndex) => (
-                  <div key={skill.name}>
-                    <div className="flex justify-between text-sm mb-1">
-                      <span className="text-slate-700 dark:text-slate-300">{skill.name}</span>
-                      <span className="text-blue-600 dark:text-blue-400">{skill.level}%</span>
-                    </div>
-                    <div className="w-full bg-slate-200 dark:bg-slate-700 rounded-full h-2">
-                      <div 
-                        className="bg-gradient-to-r from-blue-600 to-cyan-600 dark:from-blue-400 dark:to-cyan-400 h-2 rounded-full transition-all duration-1000 ease-out"
-                        style={{ 
-                          width: isVisible ? `${skill.level}%` : '0%',
-                          transitionDelay: `${(index * 4 + skillIndex) * 100}ms`
-                        }}
-                      ></div>
-                    </div>
-                  </div>
+                  <span
+                    key={skill}
+                    className="px-3 py-1.5 text-sm font-medium rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-transparent hover:border-blue-500/30 dark:hover:border-blue-400/30 hover:bg-blue-50 dark:hover:bg-blue-900/30 hover:text-blue-700 dark:hover:text-blue-300 transition-all duration-300 cursor-default hover:scale-105"
+                    style={{
+                      transitionDelay: `${skillIndex * 50}ms`
+                    }}
+                  >
+                    {skill}
+                  </span>
                 ))}
               </div>
             </CardContent>
@@ -129,20 +110,31 @@ const Skills = () => {
         ))}
       </div>
 
-      <div className="grid md:grid-cols-2 gap-6">
-        <Card className="bg-white/70 dark:bg-slate-800/50 border-blue-600/20 dark:border-blue-400/20">
-          <CardHeader>
-            <CardTitle className="text-slate-900 dark:text-white text-center">Technologies & Tools</CardTitle>
+      <div className="grid md:grid-cols-2 gap-8">
+        <Card
+          className="group relative overflow-hidden bg-white/50 dark:bg-slate-800/40 backdrop-blur-sm border-slate-200 dark:border-slate-700 hover:border-blue-500/50 dark:hover:border-blue-400/50 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 h-full"
+        >
+          {/* Gradient Background Effect on Hover */}
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-cyan-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+          <CardHeader className="relative z-10">
+            <CardTitle className="flex items-center gap-3 text-2xl text-slate-900 dark:text-white">
+              <div className="p-2 bg-blue-100 dark:bg-blue-900/30 rounded-lg text-blue-600 dark:text-blue-400 group-hover:scale-110 transition-transform duration-500">
+                <Globe className="w-6 h-6" />
+              </div>
+              Technologies & Tools
+            </CardTitle>
           </CardHeader>
-          <CardContent>
-            <div className="flex flex-wrap gap-3 justify-center">
+          <CardContent className="relative z-10">
+            <div className="flex flex-wrap gap-3">
               {technologies.map((tech, index) => (
-                <span 
+                <span
                   key={tech}
-                  className="px-4 py-2 bg-gradient-to-r from-blue-600 to-cyan-600 text-white rounded-full text-sm font-medium transform hover:scale-105 transition-all duration-200"
-                  style={{ 
-                    animationDelay: `${index * 100}ms`,
-                    animation: isVisible ? 'fadeInUp 0.6s ease-out forwards' : 'none'
+                  className="px-4 py-2 bg-slate-100 dark:bg-slate-800 border border-transparent hover:border-blue-500/30 dark:hover:border-blue-400/30 text-slate-700 dark:text-slate-300 rounded-lg text-sm font-medium hover:bg-blue-50 dark:hover:bg-blue-900/30 hover:text-blue-700 dark:hover:text-blue-300 transform hover:scale-105 transition-all duration-300 cursor-default"
+                  style={{
+                    opacity: isVisible ? 1 : 0,
+                    transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
+                    transitionDelay: `${index * 50}ms`
                   }}
                 >
                   {tech}
@@ -152,19 +144,30 @@ const Skills = () => {
           </CardContent>
         </Card>
 
-        <Card className="bg-white/70 dark:bg-slate-800/50 border-blue-600/20 dark:border-blue-400/20">
-          <CardHeader>
-            <CardTitle className="text-slate-900 dark:text-white text-center">Technical Concepts</CardTitle>
+        <Card
+          className="group relative overflow-hidden bg-white/50 dark:bg-slate-800/40 backdrop-blur-sm border-slate-200 dark:border-slate-700 hover:border-cyan-500/50 dark:hover:border-cyan-400/50 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 h-full"
+        >
+          {/* Gradient Background Effect on Hover */}
+          <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+          <CardHeader className="relative z-10">
+            <CardTitle className="flex items-center gap-3 text-2xl text-slate-900 dark:text-white">
+              <div className="p-2 bg-cyan-100 dark:bg-cyan-900/30 rounded-lg text-cyan-600 dark:text-cyan-400 group-hover:scale-110 transition-transform duration-500">
+                <Server className="w-6 h-6" />
+              </div>
+              Technical Concepts
+            </CardTitle>
           </CardHeader>
-          <CardContent>
-            <div className="flex flex-wrap gap-3 justify-center">
+          <CardContent className="relative z-10">
+            <div className="flex flex-wrap gap-3">
               {concepts.map((tech, index) => (
-                <span 
+                <span
                   key={tech}
-                  className="px-4 py-2 bg-gradient-to-r from-blue-600 to-cyan-600 text-white rounded-full text-sm font-medium transform hover:scale-105 transition-all duration-200"
-                  style={{ 
-                    animationDelay: `${index * 100}ms`,
-                    animation: isVisible ? 'fadeInUp 0.6s ease-out forwards' : 'none'
+                  className="px-4 py-2 bg-slate-100 dark:bg-slate-800 border border-transparent hover:border-cyan-500/30 dark:hover:border-cyan-400/30 text-slate-700 dark:text-slate-300 rounded-lg text-sm font-medium hover:bg-cyan-50 dark:hover:bg-cyan-900/30 hover:text-cyan-700 dark:hover:text-cyan-300 transform hover:scale-105 transition-all duration-300 cursor-default"
+                  style={{
+                    opacity: isVisible ? 1 : 0,
+                    transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
+                    transitionDelay: `${(index + 5) * 50}ms`
                   }}
                 >
                   {tech}

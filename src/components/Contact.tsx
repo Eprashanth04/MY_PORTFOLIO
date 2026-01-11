@@ -47,7 +47,7 @@ const Contact = () => {
   ];
 
   const downloadResume = () => {
-    window.open('https://drive.google.com/file/d/1HGZ7NhfP749okkqGLvrLugI3b9pZ7mT9/view?usp=sharing');
+    window.open('/resume.pdf', '_blank');
   };
 
   return (
@@ -64,17 +64,17 @@ const Contact = () => {
       <div className="grid lg:grid-cols-2 items-stretch gap-12 max-w-6xl mx-auto">
         <div className="space-y-8 h-full flex flex-col">
           <div>
-            <h3 className="text-2xl font-bold text-white mb-6">Let's Connect</h3>
-            <p className="text-slate-300 leading-relaxed mb-6">
-              I'm always open to discussing new opportunities, innovative projects, or potential collaborations. 
-              Whether you're looking for a dedicated Full Stack Developer or want to explore how we can work 
+            <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-6">Let's Connect</h3>
+            <p className="text-slate-700 dark:text-slate-300 leading-relaxed mb-6">
+              I'm always open to discussing new opportunities, innovative projects, or potential collaborations.
+              Whether you're looking for a dedicated Full Stack Developer or want to explore how we can work
               together, I'd love to hear from you.
             </p>
           </div>
 
           <div className="space-y-4">
             {contactInfo.map((info, index) => (
-            <Card key={index} className="bg-white/70 dark:bg-slate-800/50 border-blue-600/20 dark:border-blue-400/20 hover:border-blue-600/40 dark:hover:border-blue-400/40 transition-all duration-300 card-hover">
+              <Card key={index} className="bg-white/70 dark:bg-slate-800/50 border-blue-600/20 dark:border-blue-400/20 hover:border-blue-600/40 dark:hover:border-blue-400/40 transition-all duration-300 card-hover">
                 <CardContent className="p-6">
                   <div className="flex items-center gap-4">
                     <div className="text-blue-600 dark:text-blue-400">
@@ -83,8 +83,8 @@ const Contact = () => {
                     <div>
                       <h4 className="text-slate-900 dark:text-white font-semibold">{info.title}</h4>
                       {info.link ? (
-                        <a 
-                          href={info.link} 
+                        <a
+                          href={info.link}
                           className="text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
                         >
                           {info.content}
@@ -100,7 +100,7 @@ const Contact = () => {
           </div>
 
           <div>
-            <h4 className="text-white font-semibold mb-4">Follow Me</h4>
+            <h4 className="text-slate-900 dark:text-white font-semibold mb-4">Follow Me</h4>
             <div className="flex gap-4">
               {socialLinks.map((social, index) => (
                 <a
@@ -108,7 +108,7 @@ const Contact = () => {
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`text-white ${social.color} transition-all duration-200 transform hover:scale-110`}
+                  className={`text-slate-700 dark:text-white ${social.color} transition-all duration-200 transform hover:scale-110`}
                 >
                   {social.icon}
                 </a>
@@ -126,7 +126,7 @@ const Contact = () => {
           </CardHeader>
           <CardContent className="space-y-6 flex-grow flex flex-col">
             <div className="space-y-4">
-              <Button 
+              <Button
                 className="w-full bg-blue-600 hover:bg-blue-700 text-white"
                 size="lg"
                 onClick={downloadResume}
@@ -134,9 +134,9 @@ const Contact = () => {
                 <Download className="mr-2" size={20} />
                 Download Resume
               </Button>
-              
-              <Button 
-                variant="outline" 
+
+              <Button
+                variant="outline"
                 className="w-full border-blue-600/40 text-blue-600 hover:bg-blue-600/10 dark:border-blue-400/40 dark:text-blue-400 dark:hover:bg-blue-400/10"
                 size="lg"
                 onClick={() => window.open('mailto:ellurprashanth82@gmail.com')}

@@ -22,3 +22,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Backups
+node_modules_old
+node_modules - Copy
+dist - Copy

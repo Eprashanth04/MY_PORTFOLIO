@@ -44,13 +44,12 @@ const Navigation = ({ activeSection, onNavigate }: NavigationProps) => {
   };
 
   return (
-    <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-white/80 dark:bg-slate-900/95 backdrop-blur-sm shadow-lg' : 'bg-transparent'
-    }`}>
+    <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white/80 dark:bg-slate-900/95 backdrop-blur-sm shadow-lg' : 'bg-transparent'
+      }`}>
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <div className="text-2xl font-bold text-slate-900 dark:text-white">
-            <span className="text-white mr-1">E</span>Sai Prashanth
+            E Sai Prashanth
           </div>
 
           <div className="hidden md:flex items-center space-x-6">
@@ -58,11 +57,10 @@ const Navigation = ({ activeSection, onNavigate }: NavigationProps) => {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`transition-colors duration-200 ${
-                  activeSection === item.id
-                    ? 'text-blue-600 dark:text-blue-400'
-                    : 'text-slate-900 hover:text-blue-600 dark:text-white dark:hover:text-blue-400'
-                }`}
+                className={`transition-colors duration-200 ${activeSection === item.id
+                  ? 'text-blue-600 dark:text-blue-400'
+                  : 'text-slate-900 hover:text-blue-600 dark:text-white dark:hover:text-blue-400'
+                  }`}
               >
                 {item.label}
               </button>
@@ -90,11 +88,10 @@ const Navigation = ({ activeSection, onNavigate }: NavigationProps) => {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                 className={`block w-full text-left py-2 transition-colors duration-200 ${
-                  activeSection === item.id
-                     ? 'text-blue-600 dark:text-blue-400'
-                     : 'text-slate-900 hover:text-blue-600 dark:text-white dark:hover:text-blue-400'
-                }`}
+                className={`block w-full text-left py-2 transition-colors duration-200 ${activeSection === item.id
+                  ? 'text-blue-600 dark:text-blue-400'
+                  : 'text-slate-900 hover:text-blue-600 dark:text-white dark:hover:text-blue-400'
+                  }`}
               >
                 {item.label}
               </button>
